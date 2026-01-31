@@ -108,6 +108,32 @@ public class hundirlaflota {
 
 
     public static void main(String[] args) {
-    
+    System.out.print("Filas del tablero: ");
+        int filas = sc.nextInt();
+        System.out.print("Columnas del tablero: ");
+        int columnas = sc.nextInt();
+
+
+        System.out.print("Número de barcos: ");
+        int numBarcos = sc.nextInt();
+        System.out.print("Longitud de los barcos: ");
+        int longitud = sc.nextInt();
+
+
+        char[][] tableroA = crearTablero(filas, columnas);
+        char[][] tableroB = crearTablero(filas, columnas);
+
+
+        System.out.println("\nEl Jugador A va a colocar sus barcos");
+        colocarBarcos(tableroA, numBarcos, longitud);
+
+
+        System.out.println("\nEl Jugador B va a colocar sus barcos:");
+        colocarBarcos(tableroB, numBarcos, longitud);
+
+
+        hundirLaFlota(tableroA, tableroB);
     }
-}
+
+    }
+
