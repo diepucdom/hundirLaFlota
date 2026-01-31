@@ -54,7 +54,56 @@ public class hundirlaflota {
 
 
     public static void hundirLaFlota(char[][] tableroA, char[][] tableroB) {
+        int fila, columna;
+        boolean turnoJugadorA = true;
 
+
+        while (true) {
+            if (turnoJugadorA) {
+                System.out.println("\nTurno Jugador A");
+                System.out.println("Tablero enemigo:");
+                mostrarTablero(tableroB);
+
+
+                System.out.print("Fila ataque: ");
+                fila = sc.nextInt();
+                System.out.print("Columna ataque: ");
+                columna = sc.nextInt();
+
+
+                if (tableroB[fila][columna] == 'O') {
+                    System.out.println("¡TOCADO!");
+                    tableroB[fila][columna] = 'X';
+                } else if (tableroB[fila][columna] == '~') {
+                    System.out.println("Agua...");
+                    tableroB[fila][columna] = '*';
+                }
+
+
+            } else {
+                System.out.println("\nTurno Jugador B");
+                System.out.println("Tablero enemigo:");
+                mostrarTablero(tableroA);
+
+
+                System.out.print("Fila ataque: ");
+                fila = sc.nextInt();
+                System.out.print("Columna ataque: ");
+                columna = sc.nextInt();
+
+
+                if (tableroA[fila][columna] == 'O') {
+                    System.out.println("¡TOCADO!");
+                    tableroA[fila][columna] = 'X';
+                } else if (tableroA[fila][columna] == '~') {
+                    System.out.println("Agua...");
+                    tableroA[fila][columna] = '*';
+                }
+            }
+
+
+            turnoJugadorA = !turnoJugadorA;
+        }
     }
 
 
