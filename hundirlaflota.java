@@ -12,8 +12,36 @@ public class hundirlaflota {
     }
 
     public static void colocarBarcos(char[][] tablero, int numBarcos, int longitudBarco) {
-    
+        int filaInicio, colInicio, filaFin, colFin;
+
+
+        for (int b = 1; b <= numBarcos; b++) {
+            System.out.println("Colocando barco " + b);
+            System.out.print("Fila inicio: ");
+            filaInicio = sc.nextInt();
+            System.out.print("Columna inicio: ");
+            colInicio = sc.nextInt();
+            System.out.print("Fila final: ");
+            filaFin = sc.nextInt();
+            System.out.print("Columna final: ");
+            colFin = sc.nextInt();
+
+
+            // EJE X
+            if (filaInicio == filaFin) {
+                for (int j = colInicio; j <= colFin; j++) {
+                    tablero[filaInicio][j] = 'O';
+                }
+            }
+            // EJE Y
+            else if (colInicio == colFin) {
+                for (int i = filaInicio; i <= filaFin; i++) {
+                    tablero[i][colInicio] = 'O';
+                }
+            }
+        }
     }
+
     public static void mostrarTablero(char[][] tablero) {
 
     }
