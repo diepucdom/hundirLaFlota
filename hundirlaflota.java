@@ -43,6 +43,12 @@ public class hundirlaflota {
     }
 
     public static void mostrarTablero(char[][] tablero) {
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[0].length; j++) {
+                System.out.print(tablero[i][j] + " ");
+            }
+            System.out.println();
+        }
 
     }
 
